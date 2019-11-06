@@ -1,41 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { setOrders } from '../../actions';
-import { getOrders } from '../../apiCalls';
-import { Orders, mapStateToProps, mapDispatchToProps } from './Orders';
+import { setOrders, addOrder } from '../../actions';
+import { OrderForm, mapStateToProps, mapDispatchToProps } from './OrderForm';
 
-jest.mock('../../apiCalls');
-
-describe('Orders', () => {
+describe('OrderForm', () => {
   let wrapper;
-  let orders = [
-    { ingredients: [{}, {}] },
-    { ingredients: [{}, {}] },
-    { ingredients: [{}, {}] }
-  ];
 
   beforeEach(() => {
-    wrapper = shallow(<Orders orders={orders} />);
-    getOrders.mockImplementation(() => {
-      return Promise.resolve([
-        {
-          name: 'Vanessa Randall',
-          ingredients: ['chicken', 'cheese', 'awesome sauce']
-        },
-        {
-          name: 'Robbie',
-          ingredients: ["I'm not sure what you like on your burritos"]
-        }
-      ]);
-    });
+    wrapper = shallow(<OrderForm />);
   });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should call getOrders on componentDidMount', () => {
-    expect(getOrders).toHaveBeenCalled();
   });
 });
 
@@ -62,6 +38,16 @@ describe('mapDispatchToProps', () => {
 
     const mappedProps = mapDispatchToProps(mockDispatch);
     mappedProps.setOrders([{}, {}, {}]);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('calls dispatch with addOrder', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = addOrder({});
+
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.addOrder({});
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });

@@ -111,7 +111,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(OrderForm);
-
-// Add functionality to allow submission of the form when there is at least one ingredient added to the order.If there are no ingredients in the order, you should not be able to submit the order.
-
-//   Also, right now we're seeing a warning in the console about unique keys... Get rid of that warning.

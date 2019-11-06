@@ -10,11 +10,15 @@ export class Orders extends Component {
     super();
     this.props = props;
   }
-  componentDidMount() {
-    getOrders()
-      .then(data => this.props.setOrders(data.orders))
-      .catch(err => console.error('Error fetching:', err));
-  }
+
+  componentDidMount = async () => {
+    try {
+      let data = await getOrders();
+      return this.props.setOrders(data.orders);
+    } catch ({ message }) {
+      console.log(message);
+    }
+  };
 
   render = () => {
     const orderEls = this.props.orders.map((order, index) => {
