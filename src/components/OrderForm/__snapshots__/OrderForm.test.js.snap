@@ -10,6 +10,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     value=""
   />
   <button
+    id="beans"
     key="beans"
     name="beans"
     onClick={[Function]}
@@ -17,6 +18,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     beans
   </button>
   <button
+    id="steak"
     key="steak"
     name="steak"
     onClick={[Function]}
@@ -24,6 +26,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     steak
   </button>
   <button
+    id="carnitas"
     key="carnitas"
     name="carnitas"
     onClick={[Function]}
@@ -31,6 +34,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     carnitas
   </button>
   <button
+    id="sofritas"
     key="sofritas"
     name="sofritas"
     onClick={[Function]}
@@ -38,6 +42,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     sofritas
   </button>
   <button
+    id="lettuce"
     key="lettuce"
     name="lettuce"
     onClick={[Function]}
@@ -45,6 +50,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     lettuce
   </button>
   <button
+    id="queso fresco"
     key="queso fresco"
     name="queso fresco"
     onClick={[Function]}
@@ -52,6 +58,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     queso fresco
   </button>
   <button
+    id="pico de gallo"
     key="pico de gallo"
     name="pico de gallo"
     onClick={[Function]}
@@ -59,6 +66,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     pico de gallo
   </button>
   <button
+    id="hot sauce"
     key="hot sauce"
     name="hot sauce"
     onClick={[Function]}
@@ -66,6 +74,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     hot sauce
   </button>
   <button
+    id="guacamole"
     key="guacamole"
     name="guacamole"
     onClick={[Function]}
@@ -73,6 +82,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     guacamole
   </button>
   <button
+    id="jalapenos"
     key="jalapenos"
     name="jalapenos"
     onClick={[Function]}
@@ -80,6 +90,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     jalapenos
   </button>
   <button
+    id="cilantro"
     key="cilantro"
     name="cilantro"
     onClick={[Function]}
@@ -87,6 +98,7 @@ exports[`OrderForm should match the snapshot 1`] = `
     cilantro
   </button>
   <button
+    id="sour cream"
     key="sour cream"
     name="sour cream"
     onClick={[Function]}
