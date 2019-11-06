@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { setOrders } from '../../actions';
+import { setOrders, addOrder } from '../../actions';
+import { createOrder } from '../../apiCalls'
 
 export class OrderForm extends Component {
   constructor(props) {
@@ -22,9 +23,15 @@ export class OrderForm extends Component {
     this.setState({ ingredients: [...this.state.ingredients, e.target.name] });
   };
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
-    setOrders(e)
+    const { addOrder } = this.props;
+    try {
+      let newOrder = await createOrder(this.state);
+      addOrder(newOrder);
+    } catch ({ message }) {
+      console.log(message);
+    }
     this.clearInputs();
   };
 
@@ -84,7 +91,7 @@ export const mapStateToProps = ({ orders }) => ({
 });
 
 export const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ setOrders }, dispatch);
+  return bindActionCreators({ setOrders, addOrder }, dispatch);
 };
 
 export default connect(
