@@ -1,9 +1,24 @@
 import React from 'react';
-import { connect } from 'enzyme';
+import { shallow } from 'enzyme';
 import { setOrders } from '../../actions';
 import { Orders, mapStateToProps, mapDispatchToProps } from './Orders';
 
-describe('Orders', () => {});
+describe('Orders', () => {
+  let wrapper;
+  let orders = [
+    { ingredients: [{}, {}] },
+    { ingredients: [{}, {}] },
+    { ingredients: [{}, {}] }
+  ];
+
+  beforeEach(() => {
+    wrapper = shallow(<Orders orders={orders} />);
+  });
+
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 
 describe('mapStateToProps', () => {
   it('should return an object with an orders object', () => {
