@@ -25,7 +25,11 @@ export class OrderForm extends Component {
 
   handleClick = e => {
     e.preventDefault();
-    return this.state.ingredients.length ? this.handleSubmit(e) : <p>Please select ingredients for your burrito</p>;
+    return this.state.ingredients.length ? (
+      this.handleSubmit(e)
+    ) : (
+      <p>Please select ingredients for your burrito</p>
+    );
   };
 
   handleSubmit = async e => {
@@ -85,7 +89,11 @@ export class OrderForm extends Component {
 
         <p>Order: {this.state.ingredients.join(', ') || 'Nothing selected'}</p>
 
-        {this.state.ingredients.length ? (<button onClick={e => this.Click(e)}>Submit Order</button>) : <p>Please add ingredients to your burrito!</p>}
+        {this.state.ingredients.length ? (
+          <button onClick={e => this.Click(e)}>Submit Order</button>
+        ) : (
+          <p>Please add ingredients to your burrito!</p>
+        )}
       </form>
     );
   }
